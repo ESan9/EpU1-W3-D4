@@ -9,8 +9,9 @@ for (let i = 1; i <= 76; i++) {
 
 const estrazione = document.getElementById("bttnestrazione");
 const numeriEstratti = []; // CREO UN ARRAY VUOTO PER METTERCI TUTTI I VALORI RANDOMICI USCITI //
-estrazione.addEventListener("click", () => {
-  const numberRandom = Math.floor(Math.random() * 76) + 1;
+estrazione.addEventListener("click", (e) => {
+  e.preventDefault();
+  const numberRandom = Math.floor(Math.random() * 76) + 1; //Math.ceil(Math.random *76)//
   console.log(numberRandom);
 
   if (numeriEstratti.includes(numberRandom)) {
@@ -21,7 +22,7 @@ estrazione.addEventListener("click", () => {
 
   numeriEstratti.push(numberRandom); //PUSHO IL NUMERO NELL'ARRAY, CHIARAMENTE AL PRIMO GIRO SARà VUOTO//
 
-  const celleTab = document.querySelectorAll(".cell");
+  const celleTab = document.querySelectorAll(".cell"); // oppure [`.cell[numero="$"{random}]`] //
 
   celleTab.forEach((cellaTab) => {
     if (numberRandom === parseInt(cellaTab.textContent)) {
