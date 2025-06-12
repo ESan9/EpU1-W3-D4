@@ -7,6 +7,15 @@ for (let i = 1; i <= 76; i++) {
   tabellone.appendChild(celleTab);
 }
 
+const tabellina = document.getElementById("tabellina");
+
+for (let i = 1; i <= 24; i++) {
+  const celleTabellina = document.createElement("span");
+  celleTabellina.className = "cellina";
+  celleTabellina.textContent = Math.floor(Math.random() * 76) + 1;
+  tabellina.appendChild(celleTabellina);
+}
+
 const estrazione = document.getElementById("bttnestrazione");
 const numeriEstratti = []; // CREO UN ARRAY VUOTO PER METTERCI TUTTI I VALORI RANDOMICI USCITI //
 estrazione.addEventListener("click", (e) => {
@@ -22,27 +31,11 @@ estrazione.addEventListener("click", (e) => {
 
   numeriEstratti.push(numberRandom); //PUSHO IL NUMERO NELL'ARRAY, CHIARAMENTE AL PRIMO GIRO SARà VUOTO//
 
-  const celleTab = document.querySelectorAll(".cell"); // oppure [`.cell[numero="$"{random}]`] //
+  const celleTab = document.querySelectorAll(".cell, .cellina"); // oppure [`.cell[numero="$"{random}]`] //
 
   celleTab.forEach((cellaTab) => {
     if (numberRandom === parseInt(cellaTab.textContent)) {
       cellaTab.style.backgroundColor = "green";
     }
   });
-});
-
-const tabellina = document.getElementById("tabellina");
-
-for (let i = 1; i <= 24; i++) {
-  const celleTabellina = document.createElement("span");
-  celleTabellina.className = "cellina";
-  celleTabellina.textContent = Math.floor(Math.random() * 76) + 1;
-  tabellina.appendChild(celleTabellina);
-}
-
-const celleTabe = document.querySelectorAll(".cellina");
-celleTabe.forEach((cellaTabe) => {
-  if (numberRandom === parseInt(cellaTabe.textContent)) {
-    cellaTabe.style.backgroundColor = "green";
-  }
 });

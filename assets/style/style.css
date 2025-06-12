@@ -25,7 +25,6 @@ body {
 
 /* Tabellina */
 .tabellina {
-  display: grid;
   grid-template-columns: auto;
   max-width: 300px;
   border-top: 100px;
