@@ -29,3 +29,19 @@ estrazione.addEventListener("click", () => {
     }
   });
 });
+
+const tabellina = document.getElementById("tabellina");
+
+for (let i = 1; i <= 24; i++) {
+  const celleTabellina = document.createElement("span");
+  celleTabellina.className = "cellina";
+  celleTabellina.textContent = Math.floor(Math.random() * 76) + 1;
+  tabellina.appendChild(celleTabellina);
+}
+
+const celleTabe = document.querySelectorAll(".cellina");
+celleTabe.forEach((cellaTabe) => {
+  if (numberRandom === parseInt(cellaTabe.textContent)) {
+    cellaTabe.style.backgroundColor = "green";
+  }
+});

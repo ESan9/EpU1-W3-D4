@@ -22,3 +22,23 @@ body {
   font-size: 18px;
   border-radius: 8px;
 }
+
+/* Tabellina */
+.tabellina {
+  display: grid;
+  grid-template-columns: auto;
+  max-width: 300px;
+  border-top: 100px;
+}
+
+/* Cellina */
+
+.cellina {
+  display: inline-block;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  padding: 15px 15px;
+  font-size: 18px;
+  border-radius: 0px;
+  margin-top: 100px;
+}
